@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>lsdagent</artifactId>
+	<name>Tomcat LDS agent</name>
+	<packaging>war</packaging>
+	<version>${applicationVersion}</version>
+	<parent>
+		<groupId>com.googlecode.tomcat-lsd</groupId>
+		<artifactId>tomcat-addons</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<dependencies>
+		<!-- COMMON CLASSES (start) -->
+		<dependency>
+			<groupId>com.googlecode.tomcat-lsd</groupId>
+			<artifactId>lsdcommon</artifactId>
+			<version>${applicationVersion}</version>
+		</dependency>
+		<!-- COMMON CLASSES (end) -->
+		<!-- TOMCAT INTEGRATION (start) -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- TOMCAT INTEGRATION (end) -->
+		<!-- JUNIT (start) -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+		</dependency>
+		<!-- JUNIT (end) -->
+	</dependencies>
+
+</project>

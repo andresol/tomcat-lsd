@@ -1,0 +1,40 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Tomcat LSD agent</display-name>
+  
+  <servlet>
+  	<servlet-name>memory</servlet-name>
+  	<servlet-class>com.googlecode.tomcatlsd.lsdagent.memory.MemoryInfoServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+  	<servlet-name>gc</servlet-name>
+  	<servlet-class>com.googlecode.tomcatlsd.lsdagent.gc.GCInfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>apps</servlet-name>
+  	<servlet-class>com.googlecode.tomcatlsd.lsdagent.apps.AppInfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>scheduler</servlet-name>
+  	<servlet-class>com.googlecode.tomcatlsd.lsdagent.servlet.HeartBeatSchedulerServlet</servlet-class>
+  	<init-param>
+  		<param-name>interval</param-name>
+  		<param-value>5</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+
+  <servlet-mapping>
+  	<servlet-name>scheduler</servlet-name>
+  	<url-pattern>/ping</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>

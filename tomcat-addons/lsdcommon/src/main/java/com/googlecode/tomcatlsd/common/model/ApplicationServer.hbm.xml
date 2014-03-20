@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.googlecode.tomcatlsd.common.model.ApplicationServer" table="APP_SERVER">
+        <composite-id>
+        	<key-property name="hostname" type="java.lang.String">
+            	<column name="HOSTNAME" />
+        	</key-property>
+        	<key-property name="alias" type="java.lang.String">
+            	<column name="ALIAS" />
+        	</key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

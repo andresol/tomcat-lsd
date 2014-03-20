@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.googlecode.tomcatlsd.common.model.ApplicationDescription" table="APP_DESC">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="org.hibernate.id.TableHiLoGenerator">
+                <param name="table">HILO_APP_DESC</param>
+        	</generator>
+        </id>
+        <property name="path" type="java.lang.String">
+            <column name="PATH" />
+        </property>
+    </class>
+</hibernate-mapping>

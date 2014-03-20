@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.googlecode.tomcatlsd.common.model.GarbageCollectorStatisticsSnapshot" table="GC_STATS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="org.hibernate.id.TableHiLoGenerator">
+                <param name="table">HILO_GC_STATS</param>
+        	</generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="numberofcalls" type="long">
+            <column name="NUMBER_OF_CALLS" />
+        </property>
+        <property name="accumulatedtime" type="long">
+            <column name="ACCUMULATED_TIME" />
+        </property>
+        <property name="averagetime" type="long">
+            <column name="AVERAGE_TIME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.googlecode.tomcatlsd.common.model.HeartBeat" table="HEARTBEAT">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="org.hibernate.id.TableHiLoGenerator">
+                <param name="table">HILO_HEARTBEAT</param>
+        	</generator>
+        </id>
+        <many-to-one name="applicationServer" class="com.googlecode.tomcatlsd.common.model.ApplicationServer" fetch="join" cascade="all">
+            <column name="HOSTNAME" />
+            <column name="ALIAS" />
+        </many-to-one>
+        <many-to-one name="applicationList" class="com.googlecode.tomcatlsd.common.model.ApplicationList" fetch="join" cascade="all">
+            <column name="APP_LIST" />
+        </many-to-one>
+        <many-to-one name="memoryUsageSnapshot" class="com.googlecode.tomcatlsd.common.model.MemoryUsageSnapshot" fetch="join" cascade="all">
+            <column name="MEMORY_USAGE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

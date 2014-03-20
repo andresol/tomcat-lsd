@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.googlecode.tomcatlsd.common.model.MemoryUsageSnapshot"
+		table="MEMORY_USAGE">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="org.hibernate.id.TableHiLoGenerator">
+				<param name="table">HILO_MEMORY_USAGE</param>
+			</generator>
+		</id>
+		<component name="heap"
+			class="com.googlecode.tomcatlsd.common.model.MemoryUsageDetailSnapshot">
+			<property name="init" type="int">
+				<column name="HEAP_INIT" />
+			</property>
+			<property name="used" type="int">
+				<column name="HEAP_USED" />
+			</property>
+			<property name="max" type="int">
+				<column name="HEAP_MAX" />
+			</property>
+			<property name="committed" type="int">
+				<column name="HEAP_COMMITTED" />
+			</property>
+			<property name="ratio" type="int">
+				<column name="HEAP_RATIO" />
+			</property>
+		</component>
+		<component name="nonheap"
+			class="com.googlecode.tomcatlsd.common.model.MemoryUsageDetailSnapshot">
+			<property name="init" type="int">
+				<column name="NONHEAP_INIT" />
+			</property>
+			<property name="used" type="int">
+				<column name="NONHEAP_USED" />
+			</property>
+			<property name="max" type="int">
+				<column name="NONHEAP_MAX" />
+			</property>
+			<property name="committed" type="int">
+				<column name="NONHEAP_COMMITTED" />
+			</property>
+			<property name="ratio" type="int">
+				<column name="NONHEAP_RATIO" />
+			</property>
+		</component>
+		<component name="total"
+			class="com.googlecode.tomcatlsd.common.model.MemoryUsageDetailSnapshot">
+			<property name="init" type="int">
+				<column name="TOTAL_INIT" />
+			</property>
+			<property name="used" type="int">
+				<column name="TOTAL_USED" />
+			</property>
+			<property name="max" type="int">
+				<column name="TOTAL_MAX" />
+			</property>
+			<property name="committed" type="int">
+				<column name="TOTAL_COMMITTED" />
+			</property>
+			<property name="ratio" type="int">
+				<column name="TOTAL_RATIO" />
+			</property>
+		</component>
+	</class>
+</hibernate-mapping>

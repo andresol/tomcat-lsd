@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 juil. 2012 17:57:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.googlecode.tomcatlsd.common.model.ApplicationList" table="APP_LIST">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="org.hibernate.id.TableHiLoGenerator">
+                <param name="table">HILO_APP_LIST</param>
+        	</generator>
+        </id>
+        <list name="applications" inverse="false" table="APP_DESC" lazy="true" cascade="all">
+            <key>
+                <column name="APP_LIST_ID" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.googlecode.tomcatlsd.common.model.ApplicationDescription" />
+        </list>
+    </class>
+</hibernate-mapping>
