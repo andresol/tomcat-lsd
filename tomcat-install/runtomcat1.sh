@@ -8,8 +8,8 @@
 export NODE_ID=1
 export TOMCAT_ALIAS=tomcat
 export HOSTNAME_ALIAS=$(uname -n)
-export JVM_INIT_MEMORY=512m
-export JVM_MAX_MEMORY=1024m
-export JVM_MAX_PERM_SIZE=256m
+export JVM_INIT_MEMORY=512
+export JVM_MAX_MEMORY=1024
+export JVM_MAX_PERM_SIZE=256
 #cd my_install_dir
 sh tomcat_shared/bin/runtomcat.sh $1

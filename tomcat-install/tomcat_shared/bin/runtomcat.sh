@@ -47,7 +47,7 @@ fi
 
 # Define environment
 export INSTALL_DIR=$(pwd)
-export CATALINA_HOME=${INSTALL_DIR}/apache-tomcat-7.0.32
+export CATALINA_HOME=${INSTALL_DIR}/apache-tomcat-8.0.9
 export CATALINA_BASE=${INSTALL_DIR}/${TOMCAT_ALIAS}_${NODE_ID}
 export CATALINA_SHARED=${INSTALL_DIR}/tomcat_shared
 export CATALINA_INSTANCE=${TOMCAT_ALIAS}_${NODE_ID}
@@ -70,7 +70,7 @@ echo "Tomcat shutdown -> $TOMCAT_SHUTDOWN_PORT"
 echo "Java Service Wrapper dump -> $WRAPPER_DUMP_PORT"
 echo "Java JMX -> $JAVA_JMX_PORT"
 echo "Java debugger -> $JAVA_DEBUG_PORT"
-echo "Java memory -> init:$JVM_INIT_MEMORY, max:$JVM_MAX_MEMORY, maxPermSize:$JVM_MAX_PERM_SIZE"
+echo "Java memory (in mb) -> init:$JVM_INIT_MEMORY, max:$JVM_MAX_MEMORY, maxPermSize:$JVM_MAX_PERM_SIZE"
 
 # Check if cluster node directory exists
 if [ ! -d $CATALINA_BASE ]; then
